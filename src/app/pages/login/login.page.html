@@ -1,11 +1,27 @@
+
 <ion-content>
+  <div class="container top">
+    <img src="/assets/img/logo.png" alt="">
+
+    <ion-segment (ionChange)="segmentChanged($event)" value="javascript">
+        <ion-segment-button value="login">
+          <ion-label>Login</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="register">
+          <ion-label>Cadastro</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+
+  </div>
 <ion-slides>
   <ion-slide>
     <div class="slide-inner ion-padding">
       <span>Login</span>
+
         <ion-item class="ion-margin-top" lines="none">
           <ion-input type="email" placeholder="E-mail"></ion-input>
         </ion-item>
+
         <ion-item class="ion-margin-top" lines="none">
           <ion-input type="password" placeholder="Senha"></ion-input>
         </ion-item>
@@ -19,15 +35,19 @@
   <ion-slide>
     <div class="slide-inner ion-padding">
       <span>Cadastro</span>
+
       <ion-item class="ion-margin-top" lines="none">
         <ion-input type="text" placeholder="Nome"></ion-input>
       </ion-item>
+
       <ion-item class="ion-margin-top" lines="none">
         <ion-input type="email" placeholder="E-mail"></ion-input>
       </ion-item>
+
       <ion-item class="ion-margin-top" lines="none">
         <ion-input type="password" placeholder="Senha"></ion-input>
       </ion-item>
+      
       <ion-button class="ion-margin-top" (click)="register" color="light" expand="block">
         Cadastrar
       </ion-button>
@@ -39,8 +59,8 @@
 
     <div class="ocean">
         <div class="waves"></div>
-        <div class="container ion-text-center">
-          <span>O aplicativo que foi efeito para o gerenciamento dos produtos da sua loja de surf!</span>
+        <div class="container bottom ion-text-center">
+          <span>O aplicativo que foi feito para o gerenciamento dos produtos da sua loja de surf!</span>
         </div>
     </div>
 </ion-content>
