@@ -1,9 +1,9 @@
 
 <ion-content class="swiper-no-swiping">  <!--colocar classe (swiper-no-swiping)para a troca de menu ocorrer somente quando clicado nos botões e não quando arrastando do os-->
-  <div class="container top">
+  <div class="container top" [hidden]="keyboard.isVisible"> 
     <img src="/assets/img/logo.png" alt="">
 
-    <ion-segment (ionChange)="segmentChanged($event)" value="javascript">
+    <ion-segment (ionChange)="segmentChanged($event)" value="login">
         <ion-segment-button value="login">
           <ion-label>Login</ion-label>
         </ion-segment-button>
@@ -59,7 +59,7 @@
 
     <div class="ocean">
         <div class="waves" [ngStyle]="{'background-position-x':wavesPosition + 'px'}"></div> <!--Pra ocorrer o movimento das ondas no background-->
-        <div class="container bottom ion-text-center">
+        <div class="container bottom ion-text-center" [hidden]="keyboard.isVisible">
           <span>O aplicativo que foi feito para o gerenciamento dos produtos da sua loja de surf!</span>
         </div>
     </div>

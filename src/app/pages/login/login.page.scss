@@ -7,12 +7,15 @@
     z-index: 2;
 
     &.top{
-        top:1%;
+        top: 1%;
         
     }
     &.bottom {
-        bottom: 20%;
-        color:#fff;
+        bottom: 25%;
+        span {
+            color:#fff;
+        }
+        
     }
 }
 
