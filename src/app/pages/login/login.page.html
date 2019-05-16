@@ -1,5 +1,5 @@
 
-<ion-content class="swiper-no-swiping">  <!--colocar classe (swiper-no-swiping)para a troca de menu ocorrer somente quando clicado nos botões e não quando arrastando do os-->
+<ion-content class="swiper-no-swiping">  
   <div class="container top" [hidden]="keyboard.isVisible"> 
     <img src="/assets/img/logo.png" alt="">
 
@@ -19,11 +19,11 @@
       <span>Login</span>
 
         <ion-item class="ion-margin-top" lines="none">
-          <ion-input type="email" placeholder="E-mail"></ion-input>
+          <ion-input type="email" placeholder="E-mail" [(ngModel)]="userLogin.email"></ion-input>
         </ion-item>
 
         <ion-item class="ion-margin-top" lines="none">
-          <ion-input type="password" placeholder="Senha"></ion-input>
+          <ion-input type="password" placeholder="Senha" [(ngModel)]="userLogin.password"></ion-input>
         </ion-item>
 
         <ion-button class="ion-margin-top" (click)="login" color="light" expand="block">
@@ -41,11 +41,11 @@
       </ion-item>
 
       <ion-item class="ion-margin-top" lines="none">
-        <ion-input type="email" placeholder="E-mail"></ion-input>
+        <ion-input type="email" placeholder="E-mail" [(ngModel)]="userRegister.email"></ion-input>
       </ion-item>
 
       <ion-item class="ion-margin-top" lines="none">
-        <ion-input type="password" placeholder="Senha"></ion-input>
+        <ion-input type="password" placeholder="Senha" [(ngModel)]="userRegister.password"></ion-input>
       </ion-item>
       
       <ion-button class="ion-margin-top" (click)="register" color="light" expand="block">
@@ -58,7 +58,7 @@
 
 
     <div class="ocean">
-        <div class="waves" [ngStyle]="{'background-position-x':wavesPosition + 'px'}"></div> <!--Pra ocorrer o movimento das ondas no background-->
+        <div class="waves" [ngStyle]="{'background-position-x':wavesPosition + 'px'}"></div> 
         <div class="container bottom ion-text-center" [hidden]="keyboard.isVisible">
           <span>O aplicativo que foi feito para o gerenciamento dos produtos da sua loja de surf!</span>
         </div>
