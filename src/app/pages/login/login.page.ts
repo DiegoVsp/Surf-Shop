@@ -31,10 +31,11 @@ export class LoginPage implements OnInit {
       this.wavesPosition -= this.wavesDifference;
     }
   }
-  login(){
+  login() {
 
   }
-  register(){
+  
+  register() {
     console.log(this.userRegister);
   }
 

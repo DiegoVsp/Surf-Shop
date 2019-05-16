@@ -25,7 +25,8 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },Keyboard
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, 
+    Keyboard
   ],
   bootstrap: [AppComponent]
 })
