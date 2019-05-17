@@ -9,10 +9,10 @@ export const environment = {
     authDomain: "surfshop-93d9a.firebaseapp.com",
     databaseURL: "https://surfshop-93d9a.firebaseio.com",
     projectId: "surfshop-93d9a",
-    storageBucket: "surfshop-93d9a.appspot.com",
+    storageBucket: "",
     messagingSenderId: "13003860576",
-    appId: "1:13003860576:web:51f95432ed6254c8"
-  }
+    
+    }
 };
 
 /*
