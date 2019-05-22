@@ -9,8 +9,8 @@ import { AuthService } from 'src/app/services/auth.service';
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
-export class LoginPage implements OnInit {
 
+export class LoginPage implements OnInit {
   @ViewChild(IonSlides) slides: IonSlides
   public wavesPosition: number = 0;
   public wavesDifference: number = 80;
@@ -37,8 +37,15 @@ export class LoginPage implements OnInit {
       this.wavesPosition -= this.wavesDifference;
     }
   }
-  login() {
-
+  async login(user: User) {
+    await this.presentLoading();
+    try {
+      await this.authService.login(this.userLogin);
+    } catch (error) {
+      this.presentToast(error.message);
+    } finally {
+      this.loading.dismiss();
+    }
   }
 
   async register() {
@@ -47,7 +54,7 @@ export class LoginPage implements OnInit {
     try {
       await this.authService.register(this.userRegister)
     } catch (error) {
-      console.error(error);
+      this.presentToast(error.message);
     } finally {
       this.loading.dismiss();
     }
@@ -55,6 +62,13 @@ export class LoginPage implements OnInit {
   async presentLoading() {
     this.loading = await this.loadingCtrl.create({ message: 'Por Favor, Aguarde...' });
     return this.loading.present();
+  }
+
+  async presentToast(message: string) {
+    const toast = await this.toastCtrl.create({
+      message, duration: 2000
+    });
+    toast.present();
   }
 
 }
