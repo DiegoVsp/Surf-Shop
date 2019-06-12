@@ -20,5 +20,8 @@ export class HomePage implements OnInit {
 
   ngOnInit() {
   }
-
+ngOnDestroy(): void {
+  this.productsSubscrition.unsubscribe();
+  
+}
 }
