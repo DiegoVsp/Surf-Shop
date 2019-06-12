@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { User } from '../interface/user';
+import { User } from '../interfaces/user';
 
 
 @Injectable({
@@ -16,7 +16,7 @@ export class AuthService {
     return this.afa.auth.createUserWithEmailAndPassword(user.email, user.password)
   }
   logout() {
-
+    return this.afa.auth.signOut();
   }
   getAuth() {
     return this.afa.auth;
